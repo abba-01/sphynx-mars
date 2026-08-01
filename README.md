@@ -1,6 +1,6 @@
 # sphynx-mars
 
-Private research notes on Mars surface morphology, stereoscopic analysis, and out-of-place-artifact hypotheses. Connected to the broader OOPA / xenopsychology / `project_the_secret` thread in the EDM research stack and to the `sphynxonmars.com / sphynxonmars.org` domain registrations.
+Private research notes on Mars surface morphology, stereoscopic analysis, and out-of-place-artifact hypotheses.
 
 **Status:** private, working notes — not for public deposit.
 

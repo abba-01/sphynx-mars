@@ -2,10 +2,6 @@
 
 Private research notes on Mars surface morphology, stereoscopic analysis, and out-of-place-artifact hypotheses.
 
-**Status:** private, working notes — not for public deposit.
-
-**Source:** intake from `~/Downloads/intake_research/mars/` 2026-05-01.
-
 ## Contents
 
 - `mars_stereo_analysis.md` + `mars_stereo_analysis (1).md` — stereoscopic photogrammetry working notes

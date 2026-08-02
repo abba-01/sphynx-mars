@@ -28,6 +28,14 @@ Phases 1–4 are sequential (each depends on the last); Phases 5–7 can proceed
 parallel once their inputs exist. Checkbox IDs (P1.1 …) are for cross-referencing in
 commits and future documents.
 
+**Detailed execution plans.** Each phase has a full execution plan in `plans/`
+(`plans/PHASE_0_PLAN.md` … `plans/PHASE_7_PLAN.md`): step-by-step research protocol,
+phase-specific academic-integrity protocol, multi-agent fan-out design (roles,
+blinding/independence arrangements, structured-output contracts, acceptance
+thresholds, human sign-off checkpoints), quality gates, failure modes, and
+deliverables. The roadmap sections below define *scope and exit criteria*; the plans
+define *how the work is executed*. On any conflict, the roadmap's exit criteria govern.
+
 ---
 
 ## Phase 0 — Repository hygiene (can start immediately)

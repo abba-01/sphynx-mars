@@ -4,6 +4,9 @@ Private research notes on Mars surface morphology, stereoscopic analysis, and ou
 
 ## Contents
 
+- `VALIDATION_REPORT.md` — **rigorous validation of the images, camera claims, and the ruler-based scale system** (sourced, quoted, reproducible)
+- `SIZE_VERIFICATION_METHODOLOGY.md` — **step-by-step scientific protocol for verifying feature sizes**, with falsification gates
+- `analysis/measure_twin_peaks.py` — reproducible pixel measurements behind the report (`analysis/skyline_overlay.png` is its output)
 - `mars_stereo_analysis.md` + `mars_stereo_analysis (1).md` — stereoscopic photogrammetry working notes
 - `stereo_methodology_paper.md` — methodology draft
 - `mars_earth_orientation_analysis.md` — orientation correlation notes
@@ -20,4 +23,5 @@ Private research notes on Mars surface morphology, stereoscopic analysis, and ou
 
 - All claims here are **working hypotheses**, not deposited findings
 - Pareidolia-vs-measurement discrimination is doctrine — assertions about "structure on Mars" might include the falsification test
+- The two AI-generated "validation" documents (`mars_stereo_analysis*.md`, `stereo_methodology_paper.md`) contain circular validation and order-of-magnitude stereo-error mistakes — see `VALIDATION_REPORT.md` before citing them
 

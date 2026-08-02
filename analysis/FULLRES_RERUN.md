@@ -10,15 +10,15 @@ in commit `dd009f4`).
 
 | File | Bytes | SHA-256 | Dimensions | Catalog claim |
 |---|---|---|---|---|
-| `intake/PIA02405.tif` (left eye) | 65,926,165 | `d32ee9af29b6505e7377bf8dd3fadde2554d510d09ab68459a6d9ea1cc2c69d6` | 7238 × 3135 RGB | "7238 x 3135 pixels", "65.93 MB" |
-| `intake/PIA02406.tif` (right eye) | 70,574,265 | `49de98486fbfc1836e2feb26aecc7589bddad2de437bf706e64e5ba4df484199` | 7296 × 3135 RGB | "7296 x 3135 pixels" |
+| `intake/00/PIA02405.tif` (left eye) | 65,926,165 | `d32ee9af29b6505e7377bf8dd3fadde2554d510d09ab68459a6d9ea1cc2c69d6` | 7238 × 3135 RGB | "7238 x 3135 pixels", "65.93 MB" |
+| `intake/00/PIA02406.tif` (right eye) | 70,574,265 | `49de98486fbfc1836e2feb26aecc7589bddad2de437bf706e64e5ba4df484199` | 7296 × 3135 RGB | "7296 x 3135 pixels" |
 
 Both files match the catalog pages' stated pixel dimensions exactly, and the left
 eye's byte count equals the catalog page's stated 65.93 MB. **Provenance caveat:**
 these copies were supplied by the repository owner; the sandbox's egress policy
 still blocks `photojournal.jpl.nasa.gov`, so checksum verification against a fresh
 institutional download (Phase 1, P1.1) remains open. Duplicate note:
-`intake/PIA02405 - Copy.png` and `intake/PIA02406 - Copy.png` are byte-identical
+`intake/00/PIA02405 - Copy.png` and `intake/00/PIA02406 - Copy.png` are byte-identical
 copies of the two TIFFs (TIFF data under a `.png` extension), not PNG conversions.
 
 ## 2. Method: single code path, refactor gate first
@@ -32,8 +32,8 @@ only descriptive labels changed). Commands:
 
 ```
 python3 analysis/measure_twin_peaks.py                                  # baseline gate
-python3 analysis/measure_twin_peaks.py --image intake/PIA02405.tif --eye left
-python3 analysis/measure_twin_peaks.py --image intake/PIA02406.tif --eye right
+python3 analysis/measure_twin_peaks.py --image intake/00/PIA02405.tif --eye left
+python3 analysis/measure_twin_peaks.py --image intake/00/PIA02406.tif --eye right
 ```
 
 For the right eye, the apex search windows are widened by ±45 reference px because

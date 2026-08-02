@@ -26,8 +26,8 @@ Product constants (NASA Photojournal catalog pages PIA02405/PIA02406):
 
 Usage (from the repo root; requires Pillow and numpy):
   python3 analysis/measure_twin_peaks.py                       # preview, left eye
-  python3 analysis/measure_twin_peaks.py --image intake/PIA02405.tif
-  python3 analysis/measure_twin_peaks.py --image intake/PIA02406.tif --eye right
+  python3 analysis/measure_twin_peaks.py --image intake/00/PIA02405.tif
+  python3 analysis/measure_twin_peaks.py --image intake/00/PIA02406.tif --eye right
 """
 import argparse
 import os

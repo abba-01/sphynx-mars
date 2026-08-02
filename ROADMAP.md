@@ -82,9 +82,14 @@ provenance recorded well enough that a stranger could verify every byte.*
       lander visible) and stereo observation `PSP_002391_1995` from uahirise.org,
       including the published DTM if available from the HiRISE DTM archive; if no
       archived DTM exists, record that fact and plan Phase 4 around the stereo pair.
-- [ ] **P1.4** Retrieve the two governing papers for methods detail: Smith et al. 1997
-      (doi:10.1029/96JE03568) and Kirk et al. 1999 (doi:10.1029/1998JE900012); also
-      Parker's sight-line localization (*Science* 278, 1746, 1997).
+- [ ] **P1.4** Retrieve the governing papers for methods detail: Smith et al. 1997
+      (doi:10.1029/96JE03568), Kirk et al. 1999 (doi:10.1029/1998JE900012), Parker's
+      sight-line localization (*Science* 278, 1746, 1997), Golombek et al. 1997
+      (doi:10.1126/science.278.5344.1743, mission overview), and Oberst et al. 1999
+      (doi:10.1029/98JE01429, horizon-panorama photogrammetry — prior art and
+      known-answer controls for P4.1). Citations verified and partial content
+      salvaged via search renderings in `data/P1_4_RETRIEVAL.md` (2026-08-02); the
+      checkbox closes only when full texts are archived with checksums.
 - [ ] **P1.5** Spot-check every quote in `VALIDATION_REPORT.md` §8 against the live
       pages (they were taken from saved PDFs and search-engine renderings under the
       sandbox egress block); correct any transcription drift.

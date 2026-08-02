@@ -98,9 +98,12 @@ existing known-answer gate). Until verified, they are recorded here and nowhere 
 2. The P4.1 executor should read O99 before running registration (prior art +
    controls), and record a blind-then-compare step against §3's values once they are
    verified at full text.
-3. Open questions for the full texts: whether the intake "Southeast Knob … triangular
-   peak to the left of the flanks of the Big Crater rim" sentence appears verbatim in
-   a NASA caption (not yet located in a rendering); the exact JGR volume/pages of O99.
+3. Open questions for the full texts: ~~whether the intake "Southeast Knob …
+   triangular peak" sentence appears verbatim in a NASA caption~~ **resolved
+   2026-08-02**: found verbatim in the owner-saved PIA01008 page ("Big Crater as
+   Viewed by Pathfinder Lander", `intake/official/`), which also gives SE Knob's
+   distance (21 km SE) — see `data/PROVENANCE.md`. Still open: the exact JGR
+   volume/pages of O99 and verification of §3's azimuth table.
 
 ## 5. Outside-sandbox completion checklist (what P1.4 still needs)
 

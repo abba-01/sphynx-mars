@@ -17,7 +17,11 @@ Both files match the catalog pages' stated pixel dimensions exactly, and the lef
 eye's byte count equals the catalog page's stated 65.93 MB. **Provenance caveat:**
 these copies were supplied by the repository owner; the sandbox's egress policy
 still blocks `photojournal.jpl.nasa.gov`, so checksum verification against a fresh
-institutional download (Phase 1, P1.1) remains open. Duplicate note:
+institutional download (Phase 1, P1.1) remains open. **[Update, 2026-08-02, later
+the same day:** fresh copies acquired in the owner's documented NASA browser
+session (`intake/official/`, science.nasa.gov snapshot headers) are **byte-identical**
+to both inputs above — the P1.1 hash check is satisfied; see `data/PROVENANCE.md`.**]**
+Duplicate note:
 `intake/00/PIA02405 - Copy.png` and `intake/00/PIA02406 - Copy.png` are byte-identical
 copies of the two TIFFs (TIFF data under a `.png` extension), not PNG conversions.
 

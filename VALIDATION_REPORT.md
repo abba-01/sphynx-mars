@@ -87,6 +87,15 @@ Established facts that follow directly:
    re-running this work outside the sandbox should fetch the TIFFs and repeat
    `analysis/measure_twin_peaks.py` at full resolution; no conclusion below is expected
    to change, because the previews already resolve at native-pixel level.
+   **[Update, 2026-08-02:** the repository owner has since added full-resolution copies
+   (`intake/PIA02405.tif`, `intake/PIA02406.tif`, commit `dd009f4`). Their pixel
+   dimensions match the catalog pages exactly (7238×3135, 7296×3135) and the left eye's
+   byte count equals the catalog's stated 65.93 MB. The pipeline was re-run at full
+   resolution on both eyes: every conclusion holds — extents agree with the preview run
+   to ≤0.4 mrad and between the eyes within the ±2-native-px tolerance. See
+   `analysis/FULLRES_RERUN.md` for inputs (SHA-256), method, gate verdicts, and error
+   budget. Checksum verification against a fresh institutional download remains open
+   (roadmap P1.1).**]**
 
 ---
 

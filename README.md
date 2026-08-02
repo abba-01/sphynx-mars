@@ -8,7 +8,8 @@ Private research notes on Mars surface morphology, stereoscopic analysis, and ou
 - `plans/PHASE_0_PLAN.md` … `plans/PHASE_7_PLAN.md` — **per-phase execution plans**: research protocol, academic-integrity protocol, agent fan-out design with acceptance thresholds, quality gates, failure modes, deliverables
 - `VALIDATION_REPORT.md` — **rigorous validation of the images, camera claims, and the ruler-based scale system** (sourced, quoted, reproducible)
 - `SIZE_VERIFICATION_METHODOLOGY.md` — **step-by-step scientific protocol for verifying feature sizes**, with falsification gates
-- `analysis/measure_twin_peaks.py` — reproducible pixel measurements behind the report (`analysis/skyline_overlay.png` is its output)
+- `analysis/measure_twin_peaks.py` — reproducible pixel measurements behind the report; one code path serves the previews (default) and the full-res products (`--image intake/PIA02405.tif`); `analysis/skyline_overlay*.png` are its outputs
+- `analysis/FULLRES_RERUN.md` — **full-resolution re-run results** (roadmap P2.1–P2.3): preview-based conclusions confirmed on `intake/PIA02405.tif` / `PIA02406.tif`, cross-eye gate passed
 - `mars_stereo_analysis.md` + `mars_stereo_analysis (1).md` — stereoscopic photogrammetry working notes
 - `stereo_methodology_paper.md` — methodology draft
 - `mars_earth_orientation_analysis.md` — orientation correlation notes

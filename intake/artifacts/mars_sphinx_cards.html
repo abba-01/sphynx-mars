@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mars Sphinx Verification: Complete Analysis Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #2d3748;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .hero-section {
+            text-align: center;
+            padding: 60px 20px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #ffeaa7);
+            animation: shimmer 3s infinite linear;
+        }
+        
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .progress-section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+        
+        .progress-bar {
+            background: #e2e8f0;
+            border-radius: 20px;
+            height: 20px;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+        
+        .progress-fill {
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            height: 100%;
+            width: 0%;
+            transition: width 0.5s ease;
+            border-radius: 20px;
+        }
+        
+        .step-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        
+        .step-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+        }
+        
+        .step-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+        
+        .step-header {
+            padding: 25px 30px;
+            color: white;
+            font-weight: 700;
+            font-size: 1.2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+        
+        .step-isis { background: linear-gradient(135deg, #e74c3c, #c0392b); }
+        .step-opencv { background: linear-gradient(135deg, #f39c12, #e67e22); }
+        .step-analysis { background: linear-gradient(135deg, #9b59b6, #8e44ad); }
+        .step-verification { background: linear-gradient(135deg, #27ae60, #2ecc71); }
+        .step-setup { background: linear-gradient(135deg, #3498db, #2980b9); }
+        
+        .step-content {
+            padding: 30px;
+            max-height: 200px;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+        
+        .step-card.expanded .step-content {
+            max-height: 2000px;
+        }
+        
+        .expand-indicator {
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .step-card.expanded .expand-indicator {
+            transform: rotate(180deg);
+        }
+        
+        .code-snippet {
+            background: #1a202c;
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 15px 0;
+            font-family: 'Fira Code', monospace;
+            font-size: 14px;
+            overflow-x: auto;
+            position: relative;
+            border-left: 4px solid #4fd1c7;
+        }
+        
+        .code-snippet::before {
+            content: attr(data-lang);
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: rgba(79, 209, 199, 0.2);
+            color: #4fd1c7;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        .checklist {
+            background: #f7fafc;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 15px 0;
+            border-left: 4px solid #38b2ac;
+        }
+        
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            padding: 8px 0;
+            transition: all 0.2s ease;
+        }
+        
+        .checklist-item:hover {
+            background: rgba(56, 178, 172, 0.1);
+            border-radius: 8px;
+            padding-left: 10px;
+        }
+        
+        .checklist-item input[type="checkbox"] {
+            margin-right: 12px;
+            transform: scale(1.3);
+            accent-color: #38b2ac;
+            cursor: pointer;
+        }
+        
+        .checklist-item label {
+            cursor: pointer;
+            font-weight: 500;
+            flex: 1;
+        }
+        
+        .alert-box {
+            padding: 20px;
+            border-radius: 12px;
+            margin: 15px 0;
+            border-left: 4px solid;
+            backdrop-filter: blur(5px);
+        }
+        
+        .alert-warning {
+            background: rgba(255, 193, 7, 0.1);
+            border-color: #ffc107;
+            color: #856404;
+        }
+        
+        .alert-success {
+            background: rgba(40, 167, 69, 0.1);
+            border-color: #28a745;
+            color: #155724;
+        }
+        
+        .alert-info {
+            background: rgba(23, 162, 184, 0.1);
+            border-color: #17a2b8;
+            color: #0c5460;
+        }
+        
+        .floating-action {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        
+        .floating-action:hover {
+            transform: scale(1.1);
+            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.6);
+        }
+        
+        .scroll-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.2);
+            z-index: 1001;
+        }
+        
+        .scroll-progress {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            width: 0%;
+            transition: width 0.1s ease;
+        }
+        
+        .data-section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+        
+        .data-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .data-card {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .data-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(102, 126, 234, 0.4);
+        }
+        
+        .data-value {
+            font-size: 2rem;
+            font-weight: 900;
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        .data-label {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .step-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="scroll-indicator">
+        <div class="scroll-progress" id="scrollProgress"></div>
+    </div>
+    
+    <div class="container">
+        <div class="hero-section fade-in">
+            <div class="hero-title">Mars Sphinx Analysis</div>
+        </div>
+
+        <div class="progress-section fade-in">
+            <h2 style="text-align: center; margin-bottom: 20px; color: #2d3748;">Analysis Progress</h2>
+            <div class="progress-bar">
+                <div class="progress-fill" id="overallProgress"></div>
+            </div>
+            <p style="text-align: center; color: #718096; margin-top: 10px;">
+                <span id="progressText">0% Complete</span>
+            </p>
+        </div>
+
+        <div class="data-section fade-in">
+            <h2 style="text-align: center; margin-bottom: 30px; color: #2d3748;">Data Sources & Requirements</h2>
+            <div class="data-grid">
+                <div class="data-card">
+                    <span class="data-value">PIA02405</span>
+                    <span class="data-label">Left Stereo Image</span>
+                </div>
+                <div class="data-card">
+                    <span class="data-value">PIA02406</span>
+                    <span class="data-label">Right Stereo Image</span>
+                </div>
+                <div class="data-card">
+                    <span class="data-value">50GB</span>
+                    <span class="data-label">Disk Space Required</span>
+                </div>
+                <div class="data-card">
+                    <span class="data-value">8GB</span>
+                    <span class="data-label">RAM Minimum</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="step-cards fade-in">
+            <div class="step-card" data-step="setup">
+                <div class="step-header step-setup">
+                    <span>🔧 Environment Setup</span>
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <span style="font-size: 0.9rem;">4-8 hours</span>
+                        <span class="expand-indicator">▼</span>
+                    </div>
+                </div>
+                <div class="step-content">
+                    <p>Install ISIS and Python environment for Mars image processing.</p>
+                    
+                    <div class="alert-box alert-info">
+                        <strong>Requirements:</strong> Linux/macOS, 8GB+ RAM, 50GB+ disk space
+                    </div>
+                    
+                    <div class="code-snippet" data-lang="bash">
+# Install conda environment
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+bash Miniconda3-latest-Linux-x86_64.sh
+
+# Create ISIS environment
+conda create -n isis python=3.9
+conda activate isis
+conda install -c usgs-astrogeology isis
+
+# Download Mars mission data
+downloadIsisData base mro
+                    </div>
+                    
+                    <div class="checklist">
+                        <h4 style="margin-bottom: 15px; color: #2d3748;">Setup Tasks</h4>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="setup1">
+                            <label for="setup1">Install conda/miniconda</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="setup2">
+                            <label for="setup2">Create ISIS environment</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="setup3">
+                            <label for="setup3">Download Mars mission data</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="setup4">
+                            <label for="setup4">Test ISIS installation</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step-card" data-step="python">
+                <div class="step-header step-opencv">
+                    <span>🐍 Python Dependencies</span>
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <span style="font-size: 0.9rem;">2-4 hours</span>
+                        <span class="expand-indicator">▼</span>
+                    </div>
+                </div>
+                <div class="step-content">
+                    <p>Install OpenCV and required Python libraries for image analysis.</p>
+                    
+                    <div class="code-snippet" data-lang="bash">
+# Install Python packages
+conda activate isis
+conda install opencv python=3.9
+pip install numpy scipy matplotlib open3d
+pip install scikit-image pandas jupyter plotly
+
+# Create project structure
+mkdir -p ~/mars_sphinx_analysis
+mkdir -p ~/mars_sphinx_analysis/data/{raw,processed,results}
+mkdir -p ~/mars_sphinx_analysis/scripts/{isis_processing,opencv_analysis}
+                    </div>
+                    
+                    <div class="code-snippet" data-lang="python">
+# Test environment
+import cv2
+import numpy as np
+import matplotlib.pyplot as plt
+import open3d as o3d
+
+print("OpenCV version:", cv2.__version__)
+print("Environment ready for analysis")
+                    </div>
+                    
+                    <div class="checklist">
+                        <h4 style="margin-bottom: 15px; color: #2d3748;">Python Setup</h4>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="python1">
+                            <label for="python1">Install OpenCV and dependencies</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="python2">
+                            <label for="python2">Create project directory structure</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="python3">
+                            <label for="python3">Download stereo image files (PIA02405, PIA02406)</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="python4">
+                            <label for="python4">Verify Python imports work correctly</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step-card" data-step="isis">
+                <div class="step-header step-isis">
+                    <span>🛰️ ISIS Stereo Processing</span>
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <span style="font-size: 0.9rem;">8-12 hours</span>
+                        <span class="expand-indicator">▼</span>
+                    </div>
+                </div>
+                <div class="step-content">
+                    <p>Process Mars stereo images using NASA's ISIS software.</p>
+                    
+                    <div class="alert-box alert-warning">
+                        <strong>Important:</strong> This step requires careful attention to ISIS processing parameters.
+                    </div>
+                    
+                    <div class="code-snippet" data-lang="bash">
+# Convert TIFF to ISIS cubes
+std2isis from=PIA02405.tif to=left.cub
+std2isis from=PIA02406.tif to=right.cub
+
+# Initialize SPICE data (camera/spacecraft info)
+spiceinit from=left.cub
+spiceinit from=right.cub
+
+# Radiometric calibration
+radiom from=left.cub to=left_cal.cub
+radiom from=right.cub to=right_cal.cub
+
+# Generate stereo point cloud
+stereo left_cal.cub right_cal.cub results/stereo
+
+# Create digital elevation model
+point2dem results/stereo-PC.tif --tr 1.0
+                    </div>
+                    
+                    <div class="code-snippet" data-lang="bash">
+# Generate orthoimages
+mapproject results/stereo-DEM.tif left_cal.cub left_ortho.tif
+mapproject results/stereo-DEM.tif right_cal.cub right_ortho.tif
+
+# Validate stereo processing
+gdalinfo results/stereo-DEM.tif
+                    </div>
+                    
+                    <div class="checklist">
+                        <h4 style="margin-bottom: 15px; color: #2d3748;">ISIS Processing</h4>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="isis1">
+                            <label for="isis1">Convert TIFF images to ISIS cube format</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="isis2">
+                            <label for="isis2">Initialize SPICE data for both images</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="isis3">
+                            <label for="isis3">Apply radiometric calibration</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="isis4">
+                            <label for="isis4">Generate stereo point cloud</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="isis5">
+                            <label for="isis5">Create digital elevation model (DEM)</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="isis6">
+                            <label for="isis6">Generate orthoimages</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step-card" data-step="analysis">
+                <div class="step-header step-analysis">
+                    <span>🔬 Measurement Analysis</span>
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <span style="font-size: 0.9rem;">12-16 hours</span>
+                        <span class="expand-indicator">▼</span>
+                    </div>
+                </div>
+                <div class="step-content">
+                    <p>Extract precise measurements using computer vision techniques.</p>
+                    
+                    <div class="code-snippet" data-lang="python">
+import cv2
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.spatial.distance import cdist
+import open3d as o3d
+
+class MarsSphinxAnalyzer:
+    def __init__(self, left_img_path, right_img_path, dem_path):
+        self.left_img = cv2.imread(left_img_path, cv2.IMREAD_GRAYSCALE)
+        self.right_img = cv2.imread(right_img_path, cv2.IMREAD_GRAYSCALE)
+        self.dem = cv2.imread(dem_path, cv2.IMREAD_ANYDEPTH)
+        
+    def find_sphinx_region(self):
+        """Detect sphinx-like structures using edge detection"""
+        edges = cv2.Canny(self.left_img, 50, 150)
+        contours, _ = cv2.findContours(edges, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+        
+        # Filter by area and shape
+        sphinx_candidates = []
+        for contour in contours:
+            area = cv2.contourArea(contour)
+            if 1000 < area < 50000:
+                sphinx_candidates.append(contour)
+        return sphinx_candidates
+    
+    def measure_dimensions(self, contour, scale_factor):
+        """Extract measurements from detected contour"""
+        rect = cv2.minAreaRect(contour)
+        width, height = rect[1]
+        
+        return {
+            'width_meters': width * scale_factor,
+            'height_meters': height * scale_factor,
+            'area_sq_meters': cv2.contourArea(contour) * scale_factor**2,
+            'center_coords': rect[0]
+        }
+                    </div>
+                    
+                    <div class="code-snippet" data-lang="python">
+def calculate_twin_peaks_distance(sphinx_center, twin_peaks_coords, scale_factor):
+    """Calculate distances to Twin Peaks for validation"""
+    distances = []
+    for peak in twin_peaks_coords:
+        pixel_dist = np.sqrt((sphinx_center[0] - peak[0])**2 + 
+                           (sphinx_center[1] - peak[1])**2)
+        meter_dist = pixel_dist * scale_factor
+        distances.append(meter_dist)
+    return distances
+
+def generate_3d_model(dem_path, output_path):
+    """Create 3D point cloud from DEM"""
+    dem = cv2.imread(dem_path, cv2.IMREAD_ANYDEPTH)
+    
+    points = []
+    for y in range(dem.shape[0]):
+        for x in range(dem.shape[1]):
+            z = dem[y, x]
+            if z > 0:  # Valid elevation
+                points.append([x, y, z])
+    
+    # Export as PLY file
+    point_cloud = o3d.geometry.PointCloud()
+    point_cloud.points = o3d.utility.Vector3dVector(points)
+    o3d.io.write_point_cloud(output_path, point_cloud)
+    return len(points)
+                    </div>
+                    
+                    <div class="checklist">
+                        <h4 style="margin-bottom: 15px; color: #2d3748;">Analysis Tasks</h4>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="analysis1">
+                            <label for="analysis1">Load ISIS processed images and DEM</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="analysis2">
+                            <label for="analysis2">Implement sphinx detection algorithm</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="analysis3">
+                            <label for="analysis3">Extract dimensional measurements</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="analysis4">
+                            <label for="analysis4">Calculate distances to Twin Peaks</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="analysis5">
+                            <label for="analysis5">Generate 3D point cloud</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="analysis6">
+                            <label for="analysis6">Create measurement visualizations</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step-card" data-step="verification">
+                <div class="step-header step-verification">
+                    <span>✅ Results & Validation</span>
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <span style="font-size: 0.9rem;">16-20 hours</span>
+                        <span class="expand-indicator">▼</span>
+                    </div>
+                </div>
+                <div class="step-content">
+                    <p>Statistical analysis and validation of measurement results.</p>
+                    
+                    <div class="code-snippet" data-lang="python">
+import pandas as pd
+from scipy import stats
+
+def statistical_analysis(measurements):
+    """Comprehensive statistical analysis of results"""
+    df = pd.DataFrame(measurements)
+    
+    def confidence_interval(data, confidence=0.95):
+        n = len(data)
+        mean = np.mean(data)
+        std_err = stats.sem(data)
+        interval = std_err * stats.t.ppf((1 + confidence) / 2, n-1)
+        return mean, interval
+    
+    # Height analysis
+    heights = df['height_meters'].values
+    height_mean, height_ci = confidence_interval(heights)
+    
+    # Distance validation (Twin Peaks known distances)
+    known_north_twin_distance = 853.44  # meters (2800 feet)
+    measured_distances = df['distance_to_north_twin'].values
+    distance_mean, distance_ci = confidence_interval(measured_distances)
+    
+    results = {
+        'sphinx_height': {
+            'mean': height_mean,
+            'confidence_interval': height_ci,
+            'precision_percent': (height_ci / height_mean) * 100
+        },
+        'distance_validation': {
+            'measured_mean': distance_mean,
+            'known_value': known_north_twin_distance,
+            'error_percent': abs(distance_mean - known_north_twin_distance) / known_north_twin_distance * 100
+        }
+    }
+    return results
+                    </div>
+                    
+                    <div class="code-snippet" data-lang="python">
+def generate_final_report(statistical_results):
+    """Generate analysis report with key findings"""
+    
+    height_data = statistical_results['sphinx_height']
+    validation_data = statistical_results['distance_validation']
+    
+    report = {
+        'mars_sphinx_height': f"{height_data['mean']:.1f} ± {height_data['confidence_interval']:.1f} meters",
+        'measurement_precision': f"±{height_data['precision_percent']:.1f}%",
+        'distance_validation_error': f"{validation_data['error_percent']:.1f}%",
+        'scale_validation': 'PASSED' if validation_data['error_percent'] < 10 else 'NEEDS_REVIEW'
+    }
+    
+    return report
+
+def create_publication_figures(measurements, dem_data):
+    """Generate publication-quality visualizations"""
+    fig, ((ax1, ax2), (ax3, ax4)) = plt.subplots(2, 2, figsize=(15, 12))
+    
+    # 1. DEM visualization
+    im1 = ax1.imshow(dem_data, cmap='terrain')
+    ax1.set_title('Digital Elevation Model')
+    plt.colorbar(im1, ax=ax1)
+    
+    # 2. Measurement distribution
+    heights = [m['height_meters'] for m in measurements]
+    ax2.hist(heights, bins=10, alpha=0.7, color='blue')
+    ax2.set_xlabel('Height (meters)')
+    ax2.set_title('Height Measurement Distribution')
+    
+    # 3. Distance validation
+    distances = [m['distance_to_north_twin'] for m in measurements]
+    ax3.scatter(range(len(distances)), distances, alpha=0.7)
+    ax3.axhline(y=853.44, color='red', linestyle='--', label='Known Distance')
+    ax3.set_ylabel('Distance (meters)')
+    ax3.set_title('Twin Peaks Distance Validation')
+    ax3.legend()
+    
+    # 4. 3D surface plot
+    X, Y = np.meshgrid(range(dem_data.shape[1]), range(dem_data.shape[0]))
+    ax4.contour(X, Y, dem_data, levels=20)
+    ax4.set_title('Topographic Contours')
+    
+    plt.tight_layout()
+    plt.savefig('mars_sphinx_analysis_results.png', dpi=300, bbox_inches='tight')
+    return fig
+                    </div>
+                    
+                    <div class="checklist">
+                        <h4 style="margin-bottom: 15px; color: #2d3748;">Validation Tasks</h4>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="verification1">
+                            <label for="verification1">Complete statistical analysis with confidence intervals</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="verification2">
+                            <label for="verification2">Validate measurements against Twin Peaks distances</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="verification3">
+                            <label for="verification3">Generate publication-quality figures</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="verification4">
+                            <label for="verification4">Create comprehensive error analysis</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="verification5">
+                            <label for="verification5">Export results in standard formats</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="verification6">
+                            <label for="verification6">Document methodology for reproducibility</label>
+                        </div>
+                    </div>
+                    
+                    <div class="alert-box alert-success">
+                        <strong>Expected Results:</strong>
+                        <ul style="margin-top: 10px;">
+                            <li>Mars Sphinx height measurement with ±1-2m precision</li>
+                            <li>Distance validation error &lt;5% using Twin Peaks reference</li>
+                            <li>95% confidence intervals for all measurements</li>
+                            <li>Complete 3D digital model of the area</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button class="floating-action" onclick="scrollToTop()" title="Back to top">
+        ↑
+    </button>
+
+    <script>
+        // Smooth scroll progress indicator
+        window.addEventListener('scroll', () => {
+            const scrollProgress = document.getElementById('scrollProgress');
+            const scrollPercentage = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            scrollProgress.style.width = scrollPercentage + '%';
+        });
+
+        // Step card expansion
+        document.querySelectorAll('.step-card').forEach(card => {
+            card.addEventListener('click', () => {
+                card.classList.toggle('expanded');
+            });
+        });
+
+        // Progress tracking
+        function updateProgress() {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            const total = checkboxes.length;
+            const checked = document.querySelectorAll('input[type="checkbox"]:checked').length;
+            const percentage = Math.round((checked / total) * 100);
+            
+            const progressFill = document.getElementById('overallProgress');
+            const progressText = document.getElementById('progressText');
+            
+            progressFill.style.width = percentage + '%';
+            progressText.textContent = `${percentage}% Complete`;
+        }
+
+        // Add event listeners to all checkboxes
+        document.addEventListener('DOMContentLoaded', () => {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', updateProgress);
+            });
+            
+            // Add fade-in animation to elements as they come into view
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animationDelay = `${Math.random() * 0.3}s`;
+                        entry.target.classList.add('fade-in');
+                    }
+                });
+            }, observerOptions);
+            
+            document.querySelectorAll('.step-card, .data-section').forEach(el => {
+                observer.observe(el);
+            });
+        });
+
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+    </script>
+</body>
+</html>

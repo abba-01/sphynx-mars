@@ -4,6 +4,7 @@ Private research notes on Mars surface morphology, stereoscopic analysis, and ou
 
 ## Contents
 
+- `ROADMAP.md` — **phased research roadmap with a rigorous task list per phase** (pre-registration, error budgets, falsification gates, exit criteria)
 - `VALIDATION_REPORT.md` — **rigorous validation of the images, camera claims, and the ruler-based scale system** (sourced, quoted, reproducible)
 - `SIZE_VERIFICATION_METHODOLOGY.md` — **step-by-step scientific protocol for verifying feature sizes**, with falsification gates
 - `analysis/measure_twin_peaks.py` — reproducible pixel measurements behind the report (`analysis/skyline_overlay.png` is its output)
@@ -17,7 +18,7 @@ Private research notes on Mars surface morphology, stereoscopic analysis, and ou
 - `visual_tunneling_camera_analysis.md` — tunneling-effect / camera-artifact analysis
 - `PIA02405-left-eye.pdf` + `PIA02406-right-eye.pdf` — source documents
 - `preview*.webp` — image previews
-- `shat-history.txt` — raw research-conversation transcript
+- `chat-history.txt` — raw research-conversation transcript
 
 ## Discipline notes
 

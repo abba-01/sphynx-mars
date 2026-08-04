@@ -128,8 +128,9 @@ imagery the range ambiguity vanishes and plan-dimensions and relief are measured
 directly:
 
 - HiRISE **PSP_001890_1995** (25 cm/px map-projected, lander visible) and stereo
-  **PSP_002391_1995** (`data/SOURCING_LIST.md`, Tier A7–A9) — ~3400× finer ground sample
-  at that range, no distance ambiguity.
+  **PSP_002391_1995** (`data/SOURCING_LIST.md`, Tier A7–A9) — 0.25 m/px versus
+  0.98 mrad × 860 m = 0.84 m/px for the IMP view, i.e. **3.4× finer linearly (11.4× by
+  area)**, and — decisively — with no distance ambiguity at all.
 - Native IMP **EDR frames** (PDS `MPFL-M-IMP-2-EDR-V1.0`, Tier A5) — the true
   0.98 mrad/px signal *without* the 500 % interpolation, to test whether any of the
   sub-2-native-px structure survives.

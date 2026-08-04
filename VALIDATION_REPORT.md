@@ -360,7 +360,8 @@ lander" (University of Arizona, https://www.uahirise.org/PSP_001890_1995). A fol
 stereo observation, PSP_002391_1995 "Topography of the Mars Pathfinder Landing Site"
 (https://www.uahirise.org/PSP_002391_1995), provides topography. **Every hummock in the
 Twin Peaks scene — including Object X — is measurable today at ~25 cm/pixel in map
-projection, a ~3400× finer ground sample at that range than the IMP view, with no
+projection, a **3.4× finer linear ground sample (11.4× by area)** at that range than the
+IMP view (0.25 m/px vs 0.98 mrad × 860 m = 0.84 m/px), with no
 distance ambiguity at all.** That, and not further work on a 1997 press mosaic, is the
 scientifically decisive test; the step-by-step protocol is in
 `SIZE_VERIFICATION_METHODOLOGY.md`.

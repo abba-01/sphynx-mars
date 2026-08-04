@@ -12,6 +12,7 @@ Private research notes on Mars surface morphology, stereoscopic analysis, and ou
 - `SIZE_VERIFICATION_METHODOLOGY.md` — **step-by-step scientific protocol for verifying feature sizes**, with falsification gates
 - `analysis/measure_twin_peaks.py` — reproducible pixel measurements behind the report; one code path serves the previews (default) and the full-res products (`--image intake/00/PIA02405.tif`); `analysis/skyline_overlay*.png` are its outputs
 - `analysis/FULLRES_RERUN.md` — **full-resolution re-run results** (roadmap P2.1–P2.3): preview-based conclusions confirmed on `intake/00/PIA02405.tif` / `PIA02406.tif`, cross-eye gate passed
+- `analysis/OBJECT_X_SILHOUETTE_REPORT.md` + `analysis/object_x_silhouette.py` — **measured silhouette geometry of "Object X"** (angular size, width profile, sub-feature decomposition, size-vs-range, resolution floor) with an explicit section on where naming enters; measurement defensible, artificiality interpretation fenced as unsupported at this resolution
 - `intake/INTAKE_REVIEW.md` — **per-file review of all 53 historical intake files**: salvageable primary data (Object X pixel-box seeds, point-E reconciliation records, provenance evidence), duplicates, and flagged invalid content; nothing in `intake/` is evidence until it passes its phase gates
 - `mars_stereo_analysis.md` + `mars_stereo_analysis (1).md` — stereoscopic photogrammetry working notes
 - `stereo_methodology_paper.md` — methodology draft

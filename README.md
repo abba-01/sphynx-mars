@@ -5,6 +5,7 @@ Private research notes on Mars surface morphology, stereoscopic analysis, and ou
 ## Contents
 
 - `paper/manuscript.md` — **journal-style manuscript** (methods/measurement note, not yet submitted): the ×1.84 scale-model error with closed-form correction, known-answer validation, stereo infeasibility, the Object X silhouette with full range-ambiguity treatment, and a null result on artificiality
+- `CORRECTIONS.md` — **corrections log**: errors found in this repository's own work, how each was caught, and what changed downstream (append-only; 25 confirmed in the 2026-08-04 audit)
 - `FINDINGS.md` — **plain-English findings to date** (what is established, at what confidence, what remains open, and how it gets decided)
 - `book/the-sphinx-on-mars.md` — **narrative chapter draft**: the arc from the appearance, through the seductive first math, the corrected math, and the disproof, as a lesson on exploration (every figure sourced to the validated record)
 - `ROADMAP.md` — **phased research roadmap with a rigorous task list per phase** (pre-registration, error budgets, falsification gates, exit criteria)

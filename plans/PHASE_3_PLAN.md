@@ -33,7 +33,8 @@ Scope boundaries:
 Calibrated-language rule (F6): all Phase 3 text must preserve the finding that
 **Object X's size is indeterminate from the IMP image alone** — the caption places the
 hummocks "a few tens of meters away from the lander to the distance of the South Twin
-Peak" (NASA Photojournal PIA02405 catalog page), a factor-of-~20 range and size ambiguity.
+Peak" (NASA Photojournal PIA02405 catalog page), a factor-of-~33 range and size ambiguity
+(30 m to 1006 m).
 
 ## 2. Inputs and preconditions
 
@@ -77,11 +78,12 @@ full-resolution TIFFs.
    agent, independently: (a) reads the Object X annotation extents off
    `preview (3).webp` (`preview_3.webp` post-P0.5; ruler x ≈ 60–63 in per `VALIDATION_REPORT.md` §5.5, just right
    of North Twin's flank); (b) converts print inches → product px two ways —
-   horizontally via width (7238 px / ~99 in ≈ 73.1 px/in) and vertically via the
-   43-in/3135-px relation (72.9 px/in) — and cross-checks by locating the annotation
+   via the sole traceable relation, 3135 px / 43 in = 72.907 product px/in (the
+   width route 7238 px / ~99 in is algebraically the same relation, not an
+   independent one, and is not used), cross-checking by locating the annotation
    box on `preview.webp` and scaling by 4.616:1; (c) reports the box
    (x₁,y₁)–(x₂,y₂) in product px with a per-edge uncertainty. Expected x-range from
-   the stated print coordinates: ≈ 60×73.1 to 63×73.1 ≈ 4386–4605 product px
+   the stated print coordinates: 60×72.907 to 63×72.907 ≈ 4374–4593 product px
    (derivation shown; final values are whatever the reconciled duplicates report).
 3. **[P3.1] Known-answer registration gate.** Each duplicate also predicts the summit
    pixel columns of North and South Twin from their print coordinates via the same
@@ -122,7 +124,7 @@ full-resolution TIFFs.
    - Plan dimensions: pixels × 25 cm on the map-projected HiRISE product
      (PSP_001890_1995, "map-projected to 25 cm/pixel", uahirise.org page).
    - Relief: from the PSP_002391_1995 DTM if the P1.3 record says one is archived;
-     otherwise the **fixed no-DTM fallback branch recorded in the Phase 1 plan §6
+     otherwise the **fixed no-DTM fallback branch recorded in the Phase 1 plan §3 step S6
      no-DTM row**, restated here so the pre-registration is self-contained: relative
      heights from the PSP_001890_1995 / PSP_002391_1995 stereo pair by area-based
      image correlation on map-projected tiles; vertical datum from ≥ 5 control points
@@ -229,11 +231,15 @@ their role names, and **denied HiRISE files** by instruction and by input manife
 model (claude-fable-5). Procedural isolation prevents information leakage between
 duplicates but not shared model-systematic priors, so duplicate agreement bounds
 procedural/transcription error only, not model-systematic error. Where the protocol
-supports it, duplicates must take methodologically distinct routes — here, the two A1
-derivers lead with opposite primary print-to-pixel conversions from step 2 (one
-horizontal-width-led, one vertical-height-led), each using the other conversion as its
-cross-check. A human spot-check of a randomized sample of duplicate outputs is a
-standing checkpoint before phase close.
+supports it, duplicates must take methodologically distinct routes. **Note (correction,
+2026-08-04):** for the A1 box derivers no such distinct route exists — the "horizontal
+via print width" and "vertical via 43-in/3135-px" conversions are algebraically the same
+relation, so the duplicates provide **procedural independence only** (independent
+transcription and boundary judgement), not methodological independence. The genuinely
+independent cross-check available to them is locating the annotation box on
+`preview.webp` and scaling by 4.616:1, which is a different raster. This limitation is
+stated rather than papered over. A human spot-check of a randomized sample of duplicate
+outputs is a standing checkpoint before phase close.
 
 | Role | Count | Independence / blinding arrangement |
 |---|---|---|

@@ -72,7 +72,7 @@ Established facts that follow directly:
 2. **The left and right "eyes" are different sizes** (7238×3135 vs 7296×3135 per the two
    catalog pages) — they are independently assembled mosaics, not a rectified stereo
    pair. Measured on the repo's own copies, the two peaks' summits sit ~175 product px
-   apart between the eyes from framing alone (see §5.2), ~200× the true stereo disparity.
+   apart between the eyes from framing alone (see §5.1), ~200× the true stereo disparity.
 3. **The repo's `preview.webp` (1568×679) and `preview (1).webp` (1568×674) are
    downscaled, lossy WebP copies of PIA02405/06** — aspect ratios match the catalog
    dimensions to 0.1 %. Scale factor 4.616:1 (left). One preview pixel ≈ 0.905 mrad —
@@ -151,11 +151,25 @@ propagates into every measurement using the E factor.
 ### 4.1 What the print scale actually is
 
 43 inches spanning the product's 3135-px height gives **72.9 product px/inch**, i.e.
-**14.29 mrad/inch** (72.9 ÷ 5 × 0.98 mrad). Cross-check: your measured North Twin extent
-(2 9/16 in) versus the same extent re-measured in pixels on the repo previews
-(≈194 product px) gives 75.7 px/in — the two independent estimates agree within 4 %.
-This confirms the ruler work was done consistently on a print (or projection) of the
-full product at ~99 in width.
+**14.29 mrad/inch** (72.9 ÷ 5 × 0.98 mrad). This scale is fixed by the annotation's own
+ruler axis against the product height; it does not depend on any independent
+re-measurement, and the ×1.84 correction of §5.3 follows from it directly.
+
+**[Correction, 2026-08-04.** An earlier version of this section claimed a cross-check:
+that the North Twin extent re-measured in pixels was "≈194 product px," giving
+75.7 px/in and agreeing with 72.9 px/in "within 4 %." **That figure was unsupported —
+it appears in no measurement in this repository, and the claimed agreement was
+therefore not established.** This repo's actual measurements give 155 product px
+(full-res left eye), 164 px (right eye), and 157 px preview-equivalent
+(`analysis/FULLRES_RERUN.md` §3). Against 2 9/16 in those give 60.5, 64.0 and 61.2
+px/in — 12–17 % *below* the print-scale value, not 4 % above it. The gap is expected
+and is not an inconsistency in the print scale: the measured extent runs apex-to-*visible
+base*, and the visible base is set by occluding ridge terrain, which is exactly the
+one-sided −0/+30 % occlusion term carried in the error budget (§5.4,
+`analysis/FULLRES_RERUN.md` §4). The honest statement is that this section's print
+scale is a *definition* derived from the annotation, not a quantity independently
+confirmed by the pixel data. Nothing in §5.3–§5.5 depends on the removed claim. The
+same erroneous sentence was corrected in `paper/manuscript.md` §3.1.**]**
 
 ---
 
@@ -274,7 +288,7 @@ Read that table carefully, because it contains both verdicts at once:
 Object X sits in the hummock field at ruler x ≈ 60–63 in, just right of North Twin's
 flank. Its distance is unknown — by NASA's own description the hummocks "range from a
 few tens of meters away from the lander to the distance of the South Twin Peak" (§2),
-a factor-of-~20 distance range and hence a factor-of-~20 size range. Consequences:
+a factor-of-~33 distance range (30 m to 1006 m) and hence a factor-of-~33 size range. Consequences:
 
 - **If** at the North Twin distance: corrected height ≈ 55.1 ft/1.84 ≈ **30 ft ≈ 9.1 m**
   (the "+18½ ft earth face" for a buried portion is conjecture with no observational

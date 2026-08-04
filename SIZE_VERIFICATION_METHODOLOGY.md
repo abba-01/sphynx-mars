@@ -90,7 +90,9 @@ cartography*, never outputs of lander stereo.
 below the true horizon is at Z = h/tan θ (camera height h = 1.5 m nominal, 1.75–1.85 m
 as-deployed; "The imager rests on a pop-up mast 80 cm above the lander and 1.5 m above
 the surface," mars.nasa.gov/MPF/mpf/sci_desc.html). Two hard limits: (i) locating the
-true horizon to ±2 native px moves Z by more than 100 % beyond ~150 m; (ii) terrain
+true horizon to ±2 native px (1.96 mrad) moves Z by more than 100 % beyond ~380 m
+(h = 1.5 m) / ~470 m (h = 1.85 m) — the threshold is Z = h/(2δ); at 150 m the excursion
+is −16 %/+24 %; (ii) terrain
 relief violates the flat-ground assumption everywhere in this scene ("bouldery ridges
 and swales," per the caption). Use only below ~50 m, and quote the h and horizon-row
 uncertainties.
@@ -154,7 +156,8 @@ null result if that's what comes back** — is available for this scene today at
 Concretely, for Object X: (1) register the IMP scene to the HiRISE map product via the
 peaks and the lander position; (2) locate Object X's pixel box in the orbital frame;
 (3) measure its true plan dimensions and, from the DTM, its relief; (4) compare against
-the pre-registered hypothesis (e.g., "73 ft × 193 ft sphinx-scale object") stated with
+the pre-registered hypothesis (the repo's actual H1: plan length 73 m ± 15 % =
+62.05–83.95 m, relief 20 m ± 25 % = 15.0–25.0 m; see ROADMAP.md P3.3) stated with
 tolerances *before* looking. That is the experiment; it is decisive either way, and it
 costs nothing — the data are public.
 

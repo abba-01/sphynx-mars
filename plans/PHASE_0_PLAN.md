@@ -204,7 +204,7 @@ is a standing checkpoint before phase close (folded into HC-4).
 | Role | Count | Independence / blinding | Maps to |
 |---|---|---|---|
 | Inventory auditor | 1 | works from repo + F1–F9 only | exit criterion |
-| Header drafters | 6 (one per target doc, incl. class iv) | parallel; shared owner-approved template (HC-1); no cross-reads of drafts | P0.1–P0.3 |
+| Header drafters | 9 (5 roadmap-named targets + 4 class-(iv) documents) | parallel; shared owner-approved template (HC-1); no cross-reads of drafts | P0.1–P0.3 |
 | Finding-fidelity verifiers | 2 per header | independent; each checks every header assertion against `VALIDATION_REPORT.md` text; neither sees the other's report | P0.1–P0.3 |
 | Adversarial verifiers | 3 per annotated doc | prompted to REFUTE: "construct a reading in which a reader still mistakes an invalidated claim for a live one"; independent | exit criterion |
 | Point-E blind readers | 2 | see only `preview (3).webp` + transcription task; blind to §4 values and to each other | P0.4 |

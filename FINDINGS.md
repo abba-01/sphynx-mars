@@ -71,9 +71,9 @@ adopts, with modern data.
 
 NASA's caption says the hummock field containing Object X spans "a few tens of
 meters away from the lander to the distance of the South Twin Peak." That is a
-**factor-of-20 uncertainty in distance, and therefore a factor-of-20 uncertainty in
-size** — from this image alone, Object X could be a 1.5-meter mound nearby or a
-30-meter mound far away. No amount of careful measuring on this image can resolve
+**factor-of-33 uncertainty in distance, and therefore a factor-of-33 uncertainty in
+size** — from this image alone, Object X could be a ~1-meter mound at 30 m or a
+~34-meter mound at 1 km. No amount of careful measuring on this image can resolve
 that.
 
 If one *assumes* it sits at North Twin's distance, the corrected size is about
@@ -114,7 +114,7 @@ by confident prose, invented citations, and probability figures ("1 in 10¹³",
 "1 in 10¹⁵", "1 in 10¹⁸" — mutually inconsistent, with no defined calculation
 behind any of them). One transcript also shows a **silent subject switch**: asked
 which way the Mars "sphinx" faces, the AI answered about the Cydonia "Face" —
-a different feature 3,000 km away — and that answer ("faces north") then
+a different feature ~1,750 km away — and that answer ("faces north") then
 contaminated the orientation documents.
 
 One nuance discovered this week: the NASA-sounding quotes in those documents about
@@ -155,7 +155,7 @@ and (b) the objects measured are, after correction, consistent with the modest
 hills NASA describes.
 
 The question is decidable. The Pathfinder site was imaged by the HiRISE orbital
-camera at 25 cm per pixel — about 3,400× finer ground detail than the lander view
+camera at 25 cm per pixel — about 3.4× finer linearly (11.4× by area) than the lander view
 at that range, with **no distance ambiguity at all** (the lander itself is visible
 in the image). The precedent is exact: the Cydonia "Face" looked artificial at low
 resolution and became an ordinary mesa when re-imaged sharply. The program's Phase

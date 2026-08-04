@@ -50,8 +50,9 @@ impact→fracture→flood link is physically load-bearing: the impact is what ti
 marginal hydraulic system over. This is the one link the model actively supports.
 
 ### Test C — Obliquity: a moon governs, and Mars is the inverse case
-Spin-axis torque proxy (mass/distance³): Mars' moons contribute **~1000× less** than
-the Sun; Earth's Moon is **~2× the Sun's** on Earth. That asymmetry is why Earth's
+Spin-axis torque proxy (mass/distance³): **Phobos contributes ~13× less** than the Sun
+(Deimos ~1500× less; both combined ~13× less), whereas **Earth's Moon is ~2× the Sun's**
+on Earth — a ~28× contrast in the moon-to-Sun ratio between the two planets. That asymmetry is why Earth's
 tilt is pinned near 23.5° and Mars' wanders chaotically 0–60°, sloshing ice
 pole↔equator. A big moon *does* quietly govern climate — but Mars never had one, and
 Phobos is spiraling *in* toward destruction in ~30–50 Myr. "The moon takes over" is

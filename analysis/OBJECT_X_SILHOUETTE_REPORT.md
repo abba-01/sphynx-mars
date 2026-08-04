@@ -36,7 +36,9 @@ frames, or orbital imagery — could move the interpretation.
    form the dark-feature residual (background − image, clipped ≥ 0).
 3. Threshold at the 80th percentile of the residual and morphologically close (radius 3
    px) to merge adjacent dark elements into a single connected mass; take the largest
-   connected component as the **cluster envelope**.
+   connected component as the **cluster envelope**. (The separate sub-feature
+   decomposition in step 4 uses the 88th percentile, un-closed — the two thresholds
+   serve different purposes and are both reported here for reproducibility.)
 4. Measure the envelope's bounding box, its **width profile** (envelope width per image
    row — the "neck" test), and, separately, decompose the un-closed thresholded field
    into **constituent dark sub-features** (connected blobs ≥ 4 px).
@@ -49,8 +51,8 @@ frames, or orbital imagery — could move the interpretation.
 |---|---|
 | Cluster envelope (this work) | 171 × 72 product px = **33.5 × 14.1 mrad**, aspect H/W = **0.42** |
 | Annotator's ruler silhouette | 191 × 55 product px = 37.4 × 10.8 mrad, aspect 0.29 (length 2⅝ in, height ¾ in) |
-| Constituent dark sub-features | **53 separate blobs**; largest 82 native px (8.9 mrad, the shadowed main mass); median ≈ 1 native px |
-| Width profile (top → down) | narrow apex (≈1–8 mrad over the upper third) **widening abruptly** to a broad basal mass (≈30 mrad), then a narrow base — a raised element over a broad body, with a real mid-height constriction |
+| Constituent dark sub-features (88th-pct, un-closed) | **53 separate blobs**; largest 2062 product px **of area** = 82 native px² (bounding box 99 × 54 product px = 19.4 × 10.6 mrad; equivalent-square side 8.9 mrad); median blob 24 product px² ≈ 1 native px² |
+| Width profile (top → down) | narrow apex (≈1–7.8 mrad) rising **monotonically** through the upper third to a broad basal mass (30.8 mrad); the sole interior width collapse lies at row 56 of 72 (**78 % down**, i.e. near the base, not mid-height), where width drops to 9 product px (1.8 mrad), separating the basal mass from a small lower lobe (max 5.1 mrad) |
 
 The horizontal extent agrees between the independent pixel measurement (33.5 mrad) and
 the annotator's ruler (37.4 mrad) to ~10 %. The vertical extent is less certain
@@ -72,13 +74,14 @@ metres … to the distance of the South Twin Peak"):
 
 A **factor-of-~33 range ambiguity → a factor-of-~33 size ambiguity.** (Cross-check: at
 860 m the 28.8 m width is consistent with the ×1.84-corrected ruler length of 31.9 m in
-`analysis/FULLRES_RERUN.md`/`book/the-sphinx-on-mars.md`.)
+`VALIDATION_REPORT.md` §5.5 / `book/the-sphinx-on-mars.md`.)
 
 ## 4. What the geometry does and does not fix
 
 - **Fixed (defensible):** there is a real, connected, dark, horizontally-elongated
   low mass at this location, ~33 × 14 mrad, tallest toward one end, with a measurable
-  mid constriction; it decomposes into ~53 sub-features.
+  width collapse near its base (78 % down); it decomposes into ~53 sub-features. Note
+  that the apex-to-body transition is a **monotone widening**, not a constriction.
 - **Not fixed:** its absolute size (range unknown), and its morphology. At *every*
   plausible range the features that would distinguish carving from natural relief —
   edges, symmetry, a deliberate "neck" — are at or below the 2-native-px floor
@@ -94,7 +97,7 @@ exercise. Take the outline in `analysis/object_x_silhouette.png` and describe it
 words, and two parses fit the *same* geometry equally well:
 
 - **Parse A (form):** a reclining figure — a raised **head** at one end, a **neck** at
-  the measured mid-constriction, a **body** extending away; the head "short" relative to
+  a width minimum, a **body** extending away; the head "short" relative to
   the Great Sphinx's proportions because it has **eroded or fallen away**, as the Great
   Sphinx's own nose/features have been whittled by time. At an assumed 860 m this is a
   ~29 m, sphinx-adjacent object.
@@ -105,8 +108,14 @@ words, and two parses fit the *same* geometry equally well:
 **The measured numbers are identical under both parses.** Everything that separates A
 from B is supplied by the describer, not by the pixels:
 
-1. *"Neck"* names a real width-minimum — but a width-minimum between two masses is shared
-   by countless natural outcrops; the metric is real, the anatomy is conferred.
+1. *"Neck"* was, in an earlier draft of this report, said to name a real mid-height
+   constriction. **That was wrong, and the corrected measurement weakens Parse A.** The
+   width profile rises *monotonically* from apex to basal mass — there is no
+   constriction between "head" and "body" at all. The only interior width collapse sits
+   at 78 % of the envelope height, near the base, separating the basal mass from a small
+   lower lobe: a position consistent with a shadow or talus boundary and not with
+   anatomy. A width minimum in the wrong place is not a neck; the metric is real, the
+   anatomy is conferred, and here the geometry does not even support the conferral.
 2. *"Head eroded / fell off"* is the decisive tell, and it is **unfalsifiable at this
    resolution.** Positing the destruction of a feature to explain its absence can
    reconcile *any* silhouette with the monument hypothesis, and nothing in these data can

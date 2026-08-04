@@ -143,7 +143,8 @@ def test_obliquity():
     print(f"  Phobos/Sun     = {phobos/sun:6.3f}")
     print(f"  Deimos/Sun     = {deimos/sun:6.3f}")
     print(f"  (Earth's Moon/Sun on Earth = {earth_moon/torque_proxy(1.989e30/5.972e24,1.496e11):6.2f})")
-    print("Mars' moons contribute a torque ~1000x smaller than the Sun's;\n"
+    print("Phobos contributes a spin-axis torque ~13x smaller than the Sun's\n"
+          "(Deimos ~1500x; both moons combined ~13x);\n"
           "Earth's Moon is COMPARABLE to the Sun's -- that is why the Moon\n"
           "pins Earth's tilt near 23.5 deg while Mars' obliquity wanders\n"
           "chaotically 0-60 deg (Laskar & Robutel 1993; Laskar 2004),\n"

@@ -50,9 +50,9 @@ Angular extents (apex to visible base) and apparent heights:
 
 | Quantity | Preview (left, 0.905 mrad/px) | Full-res left (0.196 mrad/px) | Full-res right | Agreement |
 |---|---|---|---|---|
-| North Twin extent | 34.0 px = 30.8 mrad | 155.0 px = **30.4 mrad** | 164.0 px = **32.1 mrad** | Δ(preview, full) = 0.4 mrad; Δ(eyes) = 1.7 mrad |
+| North Twin extent | 34.0 px = 30.8 mrad | 155.0 px = **30.4 mrad** | 164.0 px = **32.1 mrad** | Δ(preview, full) = 0.4 mrad; Δ(eyes) = 1.76 mrad |
 | North Twin apparent height @ 860 m | 26.5 m | **26.1 m** | **27.6 m** | lower bounds; base occluded |
-| South Twin extent | 25.0 px = 22.6 mrad | 115.0 px = **22.5 mrad** | 112.0 px = **22.0 mrad** | Δ(preview, full) = 0.1 mrad; Δ(eyes) = 0.5 mrad |
+| South Twin extent | 25.0 px = 22.6 mrad | 115.0 px = **22.5 mrad** | 112.0 px = **22.0 mrad** | Δ(preview, full) = 0.1 mrad; Δ(eyes) = 0.59 mrad |
 | South Twin apparent height @ 1006 m | 22.7 m | **22.7 m** | **22.1 m** | lower bounds; base occluded |
 
 All scale-system conclusions are unchanged at full resolution (they depend on
@@ -75,15 +75,15 @@ is recoverable from these products (F2).
 | IFOV 0.98 vs 1.00 mrad/native px | 2 % systematic | ±2 % |
 | Range 860 m (caption "approximately") | ±5 % assumed | ±5 % |
 | Base occlusion (one-sided) | — | −0 / +30 % |
-| **Total** | | **26.1 m, −2.1/+8.5 m** → consistent with NASA's 30–35 m |
+| **Total** | | **26.1 m, −2.1/+8.1 m** (quadrature; upper bound 34.2 m) → consistent with NASA's 30–35 m |
 
 ## 5. Gate verdicts (methodology Step 6)
 
 1. **Known-answer test — PASS.** The corrected angular pipeline continues to place
    both peaks at/below NASA's published 30–35 m (26.1 m and 22.7 m as occluded
    lower bounds; the corrected user ruler values 31.5/28.7 m inside/just under).
-2. **Cross-eye test — PASS.** Extents agree between the eyes within 1.7 mrad
-   (North) and 0.5 mrad (South), inside the ±2-native-px pixel-count tolerance
+2. **Cross-eye test — PASS.** Extents agree between the eyes within 1.76 mrad
+   (North, 9 product px) and 0.59 mrad (South, 3 product px), inside the ±2-native-px tolerance
    (±1.96 mrad).
 3. **Preview-fidelity check — PASS.** Full-res extents agree with the preview run
    to ≤0.4 mrad, confirming `VALIDATION_REPORT.md` §2's claim that the previews

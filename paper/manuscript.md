@@ -168,9 +168,15 @@ height spanning 43 inches gives 72.9 product px in⁻¹, hence
 
   **14.29 mrad in⁻¹ = 0.01429 rad in⁻¹.**  (2)
 
-An independent check from the annotator's own North Twin extent (2 9/16 in) against the
-same extent re-measured in pixels (≈194 product px) gives 75.7 px in⁻¹, agreeing with (2)
-to 4% and confirming the print was produced from the full product at the stated width.
+Equation (2) is a definition derived from the annotation's own ruler axis against the
+product height; it is not independently confirmed by the pixel data, and we make no such
+claim. For completeness we note that the direct pixel re-measurement of the North Twin
+extent (155 product px full-resolution left eye; 164 px right eye; §4.4) against the
+annotator's 2 9/16 in gives 60.5–64.0 px in⁻¹, i.e. 12–17% below (2). That deficit is
+expected rather than contradictory: the pixel measurement runs apex-to-*visible base*,
+and the visible base is set by occluding ridge terrain — the one-sided −0/+30% occlusion
+term carried in the error budget (Appendix A). The results of §4.2–§4.3 depend on (2)
+alone and are unaffected.
 
 ### 3.2 Skyline extraction and peak metrology
 
@@ -298,7 +304,7 @@ Applying §3.3 to the annotated feature in PIA02406:
 | Equivalent in native px | 34.2 × 14.4 px |
 | Original ruler silhouette | 191 × 55 product px = 37.4 × 10.8 mrad; aspect 0.29 |
 | Constituent sub-features | **53** connected dark blobs; largest 82 native px; median ≈1 native px |
-| Width profile | narrow upper element (~1–8 mrad) over a broad basal mass (~31 mrad), with an intervening width minimum |
+| Width profile | narrow upper element (~1–7.8 mrad) rising **monotonically** to a broad basal mass (30.8 mrad); the sole interior width collapse (9 product px = 1.8 mrad) lies at 78% of envelope height — near the base, separating the basal mass from a small lower lobe (5.1 mrad) — **not** between the upper element and the body |
 
 Horizontal extents from the independent pixel measurement and the original ruler agree to
 ~10%. Vertical extent is less well constrained (10.8–14.1 mrad) because the feature is not
@@ -361,7 +367,7 @@ does not discriminate.
 
 The neutral measurement is compatible with two mutually exclusive descriptions:
 
-- **A (form):** a reclining figure — a raised head, a neck at the measured width minimum,
+- **A (form):** a reclining figure — a raised head, a neck (though see §4.6: the width profile rises monotonically from apex to body, so no constriction exists in the position a neck would require),
   a body extending away, the head foreshortened relative to Sphinx proportions because it
   has eroded or fallen.
 - **B (null):** an irregular low mound or outcrop with shadowed relief and surrounding
@@ -467,7 +473,7 @@ orbital data are examined.
 | Product/preview scale (catalog dimensions) | exact to 0.1% | — |
 | Range 860 m (caption "approximately"; assumed ±5%) | ±43 m | ±5% |
 | Base occlusion by intervening ridges | one-sided | −0 / +30% |
-| **Total** | | **26.1 m, −2.1/+8.5 m** → consistent with 30–35 m |
+| **Total** | | **26.1 m, −2.1/+8.1 m** (quadrature; upper bound 34.2 m) → consistent with 30–35 m |
 
 Any published dimension should carry an equivalent budget; where a term cannot be
 estimated, the measurement is incomplete.
@@ -486,13 +492,35 @@ Every numerical result in this manuscript is regenerable by executing the two sc
 
 ## Erratum note
 
-An earlier internal draft stated that map-projected HiRISE offers a "~3400× finer ground
-sample" than the IMP view at this range. That figure is incorrect by ~10³: the correct
-comparison is 0.25 m px⁻¹ versus 0.84 m px⁻¹, i.e. 3.4× finer linearly and 11.4× by area.
-The error was found during preparation of this manuscript and corrected in the underlying
-documents. It does not affect any conclusion — the decisive advantage of orbital data is
-the elimination of range ambiguity, not sampling density — but it is recorded here in
-keeping with the project's error-correction policy.
+Three errors in earlier internal drafts are recorded here; the complete corrections log,
+including 25 items found in a systematic audit, is public in the project repository
+(`CORRECTIONS.md`).
+
+1. A "~3400× finer ground sample" comparison for map-projected HiRISE was incorrect by
+   ~10³: the correct figures are 0.25 m px⁻¹ versus 0.84 m px⁻¹, i.e. 3.4× finer linearly
+   and 11.4× by area. No conclusion is affected — the decisive advantage of orbital data
+   is the elimination of range ambiguity, not sampling density.
+2. §3.1 previously asserted an "independent check" in which the North Twin extent
+   "re-measured in pixels (≈194 product px)" agreed with equation (2) "to 4%." **That
+   pixel count is unsupported by any measurement in the project record**, and the claimed
+   agreement did not exist; the repository's actual re-measurements (155/164/157 product
+   px) give 60.5–64.0 px in⁻¹, 12–17% *below* (2). §3.1 has been rewritten to state that
+   (2) is a definition derived from the annotation rather than an independently confirmed
+   quantity, and to attribute the deficit to apex-to-visible-base occlusion. The results
+   of §4.2–§4.3 depend on (2) alone and are unchanged. This error is recorded prominently
+   because it is precisely the failure mode — an unsourced number supporting a satisfying
+   conclusion — that this paper's subject matter concerns.
+3. §4.6 previously described "a real mid-height constriction" in the width profile, which
+   §5.3 treated as the geometry named by the word *neck*. Re-examination shows the
+   apex-to-body transition is a monotone widening, with the sole interior width collapse
+   at 78% of envelope height, near the base. The description has been corrected; the
+   effect is to **strengthen** the null conclusion of §5.3, since the constriction does
+   not occupy the position the artificial reading requires.
+
+Errors 2 and 3 were found by an adversarial audit conducted after this manuscript was
+first drafted, in which every numeric claim in every project document was independently
+recomputed and each flagged discrepancy passed to a verifier instructed to refute it.
+Of 32 flagged items, 7 were refuted and 25 confirmed.
 
 ## Disclosure of AI assistance
 

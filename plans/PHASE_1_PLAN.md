@@ -15,7 +15,7 @@ archive data, with provenance recorded well enough that a stranger could verify 
 > absent from `data/PROVENANCE.md`."
 
 In scope: the five roadmap items P1.1-P1.5 (Photojournal TIFFs; PDS IMP EDR frames + User's Guide;
-HiRISE observations and DTM-availability determination; the three governing papers; live-page
+HiRISE observations and DTM-availability determination; the five governing papers; live-page
 spot-check of every quote in `VALIDATION_REPORT.md` §8). Out of scope: any measurement,
 registration, or interpretation of the acquired data - that is Phases 2-6. Phase 1 makes **no**
 claims about Object X; the repo's calibrated position stands unchanged: Object X's size is
@@ -200,7 +200,7 @@ Measurable, mapped to the roadmap's exit criteria:
 
 1. **Coverage:** provenance rows exist for both Photojournal TIFFs (P1.1); the identified EDR
    frames, their labels, and the User's Guide (P1.2); both HiRISE observations plus a positive or
-   negative DTM row (P1.3); all three papers' bibliographic/checksum records (P1.4); and one
+   negative DTM row (P1.3); all five papers' bibliographic/checksum records (P1.4); and one
    closed verdict per enumerated quote (P1.5).
 2. **Integrity:** every binary artifact dual-fetch-verified; every S3 pre-registered property
    checked with outcome logged.

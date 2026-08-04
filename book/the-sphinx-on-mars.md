@@ -86,7 +86,7 @@ The caption says the peaks are **30 to 35 meters** tall. That is a fact I did no
 measure; NASA did, by triangulating landmarks against orbital images. It is the answer
 key, printed above my head the whole time.
 
-Run my uncorrected ruler on North Twin and it returns **57.4 meters** — half again too
+Run my uncorrected ruler on North Twin and it returns **57.4 meters** — nearly twice too
 tall. The system fails its own answer key. Now apply the correct angular scale to the
 *same ruler marks I already made* — 2 9/16 inches of North Twin, 2 inches of South —
 and they return **31.5 meters and 28.7 meters.** Inside NASA's range. Both of them.
@@ -113,7 +113,7 @@ photo editor, forty-three inches of print, and a hopeful eye.
 The distance could not save it either. To range Object X by stereo — the two-eyed trick
 that gives depth — you would need to detect a shift of **0.17 of a pixel** between the
 eyes. The two "eyes" of this product are separate mosaics whose framing alone differs by
-about **175 pixels** — a thousand times the signal. There is no depth to read here. From
+about **175 pixels** — roughly two hundred times the signal. There is no depth to read here. From
 this image, Object X's true distance is simply unknown, and with it, its true size.
 
 The caption had told me. *Hummocks of flood debris.* Thirty to thirty-five meters. It
@@ -167,7 +167,7 @@ a careful measurement and a beautiful mistake.
 
 I am not the first to take this exact walk. In 1976 a Viking orbiter photographed a mesa
 in the Cydonia region of Mars and it looked, unmistakably, like a face — a human face, a
-mile across, staring up. It launched a thousand books. In 2001 a sharper camera, one
+two miles across, staring up. It launched a thousand books. In 2001 a sharper camera, one
 resolving detail down to about **1.5 meters**, went back and looked. The face was an
 ordinary landform — a butte about **3 kilometers long, rising some 250 meters** above
 the plain. Same arc, twenty-five years earlier: a monument at low resolution, a hill at

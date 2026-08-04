@@ -125,3 +125,49 @@ With normal network access, fetch and archive (checksums into `data/PROVENANCE.m
 
 **P1.4 checkbox status: OPEN** (citations verified and content salvaged; full texts
 not yet in hand — this log is progress, not completion).
+
+---
+
+## Addendum, 2026-08-06 — "From above": checked the repo's own overhead products; MOLA-datum elevation still missing
+
+**Question:** would the Pathfinder site have been submerged under a proposed Mars sea?
+
+**Checked the repo's local overhead sources first** (`intake/official/PIA01152.tif`, "Topographic Map of
+Pathfinder Landing Site," + `PIA01153.tif`, "Coordinate Map of Rocks," + `PIA01151.tif`, "Overhead View of
+Area Surrounding Pathfinder"). All three are genuine NASA/JPL/USGS overhead products — but all three are in
+**local lander-site coordinates (LSC/LL frame)**, not the planetary MOLA/areoid datum. PIA01152's own caption:
+elevations "referenc[ed] elevations to the local horizon," contour range only −1.2 to +0.9 m across a 120 m
+box. None of the repo's overhead imagery carries a MOLA-datum elevation for the site.
+
+**One qualitative result from PIA01152, worth keeping as circumstantial texture:** the local topography
+organizes into parallel NW- and NE-trending ridges ~20 m apart (rms relief 0.5 m) — a pattern consistent with,
+but not proof of, flow-aligned bedforms (cf. Rodriguez et al. 2019's spillway-flood interpretation of this
+site, below).
+
+**Peer-reviewed sources located (search-rendered; not yet read in full — same caveat as the rest of this log):**
+
+- Rodriguez et al. 2019, *Scientific Reports* 9, "The 1997 Mars Pathfinder Spacecraft Landing Site: Spillover
+  Deposits from an Early Mars Inland Sea." Models an inland sea ~250 km upstream of the site sharing an upper
+  shoreline (with a hypothesized connected northern-plains ocean) at **−3,800 m**; reinterprets the Pathfinder
+  site as a **spillway** carrying episodic marine spillover floods ~3.4 Ga, not a location under standing
+  water. This is the direct answer to the submersion question, and it is a "no, but episodically flooded,"
+  not a "yes."
+- Sholes et al. 2021, *JGR Planets*, "Where are Mars' Hypothesized Ocean Shorelines? Large Lateral and
+  Topographic Offsets Between Different Versions of Paleoshoreline Maps." Meta-analysis showing published
+  shoreline traces disagree by 141±142 km (Arabia) / 180±177 km (Deuteronilus) on average, locally >1000 km;
+  elevation estimates for the same nominal shoreline range from roughly −2.1 km (loose) to −3.7/−3.8 km
+  (Carr & Head 2003 refined equipotential fit) — a ~1.6 km spread. Conclusion (as rendered): this "questions
+  the usefulness of putative shorelines as evidence for ancient martian oceans." This is the reason "was site
+  X submerged" cannot be answered cleanly without specifying which contested shoreline version is meant.
+- Carr & Head (2003) refined equipotential elevations: Arabia mean −3707 m ± 13 m; Deuteronilus two portions
+  −4200 m ± 5 m and −4000 m ± 6 m.
+
+**Still open (P1.1-class gap, not yet closed):** the Pathfinder landing site's own elevation in the modern
+MOLA/IAU2000 areoid frame. Every direct fetch attempted (Golombek 1997/1999/2003, NASA site pages, NSSDC)
+returned HTTP 403 from this sandbox; search-rendered snippets were inconsistent (engineering-constraint
+mentions of "≤0 km" and "2 km below datum"; Viking 1 cited at −1.5 km in the older pre-MOLA datum, ~100 m
+different from Pathfinder per one snippet) and are not treated as reliable enough to cite. **Add to
+`data/SOURCING_LIST.md` Tier A/C:** Golombek et al. 1997 (doi:10.1029/96JE03318) and the MOLA landing-site
+comparison table in Golombek et al. 2003 (doi:10.1029/2003JE002074), fetched with normal network access, for
+the site's exact areoid-referenced elevation — the number needed to check submersion directly against the
+Sholes/Carr & Head shoreline range rather than through Rodriguez et al.'s regional model alone.

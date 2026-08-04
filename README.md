@@ -4,6 +4,7 @@ Private research notes on Mars surface morphology, stereoscopic analysis, and ou
 
 ## Contents
 
+- `FINDINGS.md` — **plain-English findings to date** (what is established, at what confidence, what remains open, and how it gets decided)
 - `ROADMAP.md` — **phased research roadmap with a rigorous task list per phase** (pre-registration, error budgets, falsification gates, exit criteria)
 - `plans/PHASE_0_PLAN.md` … `plans/PHASE_7_PLAN.md` — **per-phase execution plans**: research protocol, academic-integrity protocol, agent fan-out design with acceptance thresholds, quality gates, failure modes, deliverables
 - `VALIDATION_REPORT.md` — **rigorous validation of the images, camera claims, and the ruler-based scale system** (sourced, quoted, reproducible)

@@ -40,7 +40,9 @@ three-quarters of an inch tall.
 
 To turn inches into feet I used the distances NASA gave me. North Twin, 2800 feet away,
 sat 38⅛ inches up the ruler from the baseline; that fixes a scale of **73.44 feet per
-inch**. Run Object X through it:
+inch**. (The forty-three-inch ruler, the zero at the bottom edge, the even spacing up
+the page — those I chose. Hold that thought; it comes back with more force than the
+Sphinx.) Run Object X through it:
 
 - length: 2⅝ in × 73.44 = **192.8 feet**
 - height: ¾ in × 73.44 = **55.1 feet**
@@ -118,7 +120,50 @@ The caption had told me. *Hummocks of flood debris.* Thirty to thirty-five meter
 was the correct reading of the picture from the beginning; I just wasn't willing to read
 it until the arithmetic walked me back to it.
 
-## V. Not magic — but it happened
+## V. The arbitrary and the given
+
+I owe you the thing that looks worst, because it is the center of the lesson. The frame
+I measured in was arbitrary. I *chose* to run a forty-three-inch ruler down the print. I
+*chose* to call the bottom edge zero. I *chose* to space the distances up the page in a
+straight line. Mars forced none of it on me; they were conventions, and I invented them.
+Yes — the fractions rested on arbitrary decisions. That is not the admission that undoes
+the chapter. It is what the chapter is about.
+
+Because watch what happens to an arbitrary choice once it is made and written down: it
+stops looking arbitrary. I invented the zero-point on some particular afternoon, and by
+the next week it was simply *where zero was* — and every number I derived after it
+inherited its authority as if the geometry itself had handed it down. The convention
+hardened into an apparent fact. The choice went invisible; only its consequences stayed
+on the page, wearing the costume of necessity. What we call arbitrary is usually just
+something agreed upon so long ago that its logical connection to the present has worn
+away — we keep the conclusion and lose the memory that it was ever a decision.
+
+That is the oldest failure in the transmission of anything. A measurement, a metaphor, a
+word chosen for a reason that made sense in its moment, gets carried forward — by mouth,
+by copy, by translation — and somewhere in the carrying it drops the small flag that
+said *this was a choice.* Oral traditions do it. Written records do it. A text gets
+translated and becomes, in places, something it was not — a rendering hardens into a
+doctrine, a word that meant one thing in its own room becomes an eternal claim in ours.
+Take the Bible as the plainest instance: parts of it drift in translation into
+something they were not — and, crucially, not always, not everywhere. Much is carried
+across centuries astonishingly intact. The honest scholar's whole craft is that
+*difference* — going back to the earliest manuscripts, asking what the word meant
+*then* — and it exists precisely to settle which is which. That settling is the work.
+Blanket trust and blanket suspicion are equally lazy; the labor is in the seam.
+
+That labor is exactly what the ruler needed. Not to throw the measurements away — they
+were sound, sound to a single pixel — but to find the seam where an arbitrary frame had
+been quietly promoted to a physical fact, and cut there. And notice the shape of what
+does the cutting: the ×1.84 is the *opposite* of arbitrary. It is forced, to the
+decimal, by the camera's geometry — it could not have been otherwise. That is the whole
+motion, on a Mars photograph or in a sentence carried across three languages and two
+thousand years: you keep what was really measured, you locate the convention that got
+promoted to truth, and you convert it back into the necessary relationship it had been
+standing in for. Arbitrary choices go in. Necessary corrections come out. The method is
+the machine that tells them apart — and that machine is the only thing standing between
+a careful measurement and a beautiful mistake.
+
+## VI. Not magic — but it happened
 
 I am not the first to take this exact walk. In 1976 a Viking orbiter photographed a mesa
 in the Cydonia region of Mars and it looked, unmistakably, like a face — a human face, a

@@ -116,6 +116,35 @@ refutation. 32 candidate errors were flagged; **7 were refuted as false positive
 
 ---
 
+## 2026-08-04 (later) — Self-correction found within one turn of publication
+
+**26. The anchor-separation argument in `analysis/FIXING_THE_ZERO_POINT.md` §3 was
+wrong.** As first published, that section claimed the two calibration anchors were
+"0.0177 in apart geometrically versus 0.375 in as annotated — ×21 too far," concluding
+the calibration baseline carried no range information. The error: it applied the
+*ground-range* depression relation Z = h_cam/tan θ to marks that are not ground points.
+The annotation's own table (`B. 4 7/8 TO F. 7 7/16 = 2 9/16`) identifies **B as the North
+Twin summit and F as its visible base**, so B and C are summit marks, whose elevation
+above the horizon is h_peak/Z.
+
+Read correctly they are a *successful* measurement: 34.4 mrad × 860 m = **29.6 m** and
+29.0 mrad × 1006 m = **29.2 m** — agreeing with each other to 1 % and consistent with
+NASA's published 30–35 m; the predicted mark separation for ~30 m peaks is 0.354 in
+against 0.375 in annotated (6 %). The marks also land within **1 product pixel** of the
+pipeline's independently measured apex rows.
+
+The section's *conclusion* survives — the linear model is still invalid — but now for the
+correct reason: Z × (inches above horizon) is constant (2068 vs 2042, 1.3 %), confirming
+the hyperbolic law, while propagating North's factor to South mispredicts by −16 %, which
+is exactly why two inconsistent ft/in factors were needed.
+
+**Found:** while building the corrected overlay, by checking what the anchor marks
+physically are before drawing them. **Elapsed:** under one turn from publication.
+**Net effect:** the correction is favourable to the original annotation — the hand
+measurement was better than the previous analysis credited.
+
+---
+
 ## 2026-08-02 — Corrections made during ordinary work
 
 - `analysis/FULLRES_RERUN.md`: provenance caveat updated when owner-supplied TIFFs were

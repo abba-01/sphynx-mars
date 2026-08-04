@@ -7,11 +7,13 @@ that this choice was arbitrary and is now known to be wrong, *why not simply go 
 put the zero in the right place?*
 
 **The short answer.** Because there is no right place. The origin is not merely
-misplaced — the model that requires an origin is the wrong shape, the true reference
-line is at the opposite end of the print, and the two anchors used to calibrate it are,
-in the real geometry, effectively on top of each other. The repair is not relocation;
-it is replacement. All three results below are computed by
-`analysis/corrected_range_chart.py`.
+misplaced: the true reference line is at the opposite end of the print (§1), and the
+model that requires an origin is the wrong *shape*, so no relocation can rescue it (§2).
+The repair is not relocation; it is replacement. §3 then reports something better — read
+against the correct reference, the annotation's own anchor marks turn out to be an
+accurate measurement of the peaks, agreeing to 1 % with each other and to ~1 product
+pixel with the machine. Results computed by `analysis/corrected_range_chart.py`;
+the overlay is `analysis/corrected_overlay.py`.
 
 ---
 
@@ -51,35 +53,58 @@ The two columns do not differ by a constant, a factor, or anything an origin shi
 absorb. Where the linear model says 0 m, the ground is at 2.7 m; where it says 620 m,
 the ground is at 13 m.
 
-## 3. The decisive result: the calibration anchors are 0.018 inches apart
+## 3. CORRECTED — the anchors are summits, and read correctly they *measure the peaks*
 
-This is the finding that closes the question. The whole system was calibrated on two
-anchors of known range — North Twin at 860 m and South Twin at 1006 m. In the true
-geometry, those two ranges plot at:
+**An earlier version of this section (2026-08-04, same day) claimed the two anchors were
+"0.018 inches apart geometrically versus 0.375 inches as annotated, ×21 too far," and
+concluded that the calibration baseline carried no range information. That was wrong,
+and the error is instructive.** It applied the *ground-range* depression formula
+Z = h_cam/tan θ to two marks that are not ground points at all.
 
-- North Twin: **0.1221 inches** below the horizon
-- South Twin: **0.1044 inches** below the horizon
+The annotation's own table settles what B and C are: `B. 4 7/8 TO F. 7 7/16 = 2 9/16`.
+The interval from B to F is 2.5625 in — exactly the North Twin height measurement. So
+**B is the summit of North Twin and F its visible base**; C is likewise the South Twin
+summit. They are not ground positions, and the depression formula does not apply to them.
 
-a separation of **0.0177 inches — about 18 thousandths of an inch.** The annotation
-placed them **0.375 inches** apart: **21× too far.**
+Read correctly, a summit's elevation *above the horizon* is θ = h_peak/Z, and the marks
+become a measurement:
 
-So the vertical separation the annotation measured between its two anchors — the very
-quantity from which both feet-per-inch factors were derived — encodes **almost no range
-information at all.** What it actually encodes is *where occluding ridge terrain cuts off
-the visible base of each peak*. The calibration baseline is terrain, not distance.
+| Anchor | Elevation above horizon | Range | h = Z·θ |
+|---|---|---|---|
+| B, North Twin summit | 2.405 in = 34.4 mrad | 860 m | **29.6 m** |
+| C, South Twin summit | 2.030 in = 29.0 mrad | 1006 m | **29.2 m** |
 
-That is why relocating the zero cannot rescue the system: you cannot fit a range scale
-through two points that the geometry places 18 thousandths of an inch apart while your
-measurement places them 375 thousandths apart. Any origin that reproduces one anchor
-badly misses the other — which is exactly the observed symptom, the mutually
-inconsistent factors 73.44 and 87.42 ft/in (19% apart) reported in
-`VALIDATION_REPORT.md` §5.2.
+The two independent solutions **agree with each other to 1 %** and sit just below NASA's
+published 30–35 m. And the predicted separation of the two marks for peaks ~30 m tall is
+0.354 in against the 0.375 in actually annotated — a 6 % match. **The anchor separation
+is geometrically meaningful after all**; it encodes summit elevation h/Z, not ground range.
 
-A second confirmation from the same geometry: the anchors' *ordering* is wrong. The
-farther peak (South Twin, 1006 m) must plot **higher** on the print (0.1044 in below the
-horizon) than the nearer one (North Twin, 0.1221 in). The annotation places the nearer
-peak higher. The observed ordering is set by terrain, and it is inverted relative to
-range.
+Two further checks of the annotation's quality, both passing:
+
+- The B and C marks land on product rows 355.4 and 382.8; the pipeline's independently
+  measured apex rows are 356 and 382. **Agreement within 1 product pixel** (0.2 native px,
+  0.04 mrad).
+- The North Twin base mark F (7.4375 in) sits 0.16 in below the measured horizon line
+  (7.28 in) — i.e. the peak's visible base is essentially *on* the horizon, exactly as the
+  geometry requires for a distant peak whose true base is occluded.
+
+### What still fails, and now for the right reason
+
+The linear model remains invalid, and the anchors prove it cleanly. The true relation is
+Z = h/θ, so **Z × (inches above horizon) is constant** for peaks of equal height:
+
+- North: 860 × 2.405 = 2068
+- South: 1006 × 2.030 = 2042  (agreement 1.3 %)
+
+The hyperbolic law holds. The annotation's *linear* law does not: propagating North's
+factor (73.44 ft/in) to South predicts 2772 ft where the caption says 3300 ft — **−16 %**.
+That single failure is why two mutually inconsistent factors (73.44 and 87.42 ft/in) were
+needed at all. Forcing a hyperbolic relation into a linear form requires a new constant at
+every anchor, which is precisely the symptom recorded in `VALIDATION_REPORT.md` §5.2.
+
+And the deeper circularity stands: recovering Z from a summit's elevation requires knowing
+h — the peak height — which is the quantity the exercise set out to measure. The marks can
+give height *given* range (as above), or range *given* height, but never both.
 
 ---
 
